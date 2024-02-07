@@ -1,6 +1,7 @@
 package models;
 
 
+
 import io.ebean.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +10,7 @@ import jakarta.persistence.Id;
 import java.security.Timestamp;
 
 @Entity
-public class Note extends Model {
+public class todo extends Model {
 
     @Id
     @GeneratedValue()
@@ -18,14 +19,11 @@ public class Note extends Model {
     private String title;
     private String content;
 
-    @CreatedTimestamp
-    private Timestamp createdAt;
 
-    @UpdatedTimestamp
-    private Timestamp updatedAt;
 
-    public Todo() {
+    public todo() {
         // Default constructor
     }
 
 }
+
