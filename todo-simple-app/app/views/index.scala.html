@@ -1,0 +1,37 @@
+@()
+
+@main("Welcome to Play") {
+  <div class="h-screen bg-black">
+    <div class="flex justify-center items-center mt-10">
+      <div class="max-w-md mx-auto">
+        <h1 class="text-3xl font-bold text-white mt-20">Todo List:</h1>
+      </div>
+    </div>
+
+    <div class="flex justify-center items-center bg-black p-2 mt-10">
+      <div class="relative bg-inherit">
+        <input type="text" id="username" name="username" class="peer bg-transparent h-10 w-96 rounded-lg text-gray-200 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600" placeholder="Type inside me"/>
+        <label for="note" class="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm transition-all">Type inside me</label>
+        <button type="submit"
+        class="bg-gray-800 text-white h-11 rounded-md px-8 py-2 ml-2 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
+          Add Note
+        </button>
+      </div>
+    </div>
+
+    <div class=" p-4 mt-10 w-full mx-auto max-w-2xl">
+      <h4 class="text-white text-xl lg:text-3xl font-semibold">
+        Notes:
+      </h4>
+
+      <div class="border rounded-md p-4 mt-10 w-full mx-auto max-w-3xl" >
+        <label class="flex justify-between border bg-black text-white rounded-md px-3 py-2 my-3  cursor-pointer ">
+          <i class="pl-2 pt-2">Germany</i>
+          <button type="button" class="focus:outline-black rounded-lg text-white text-sm py-2.5 px-4 border-b-4 border-green-600 bg-gray-800 hover:bg-green-400">Done ✅</button>
+        </label>
+      </div>
+
+    </div>
+  </div>
+  </div>
+}
