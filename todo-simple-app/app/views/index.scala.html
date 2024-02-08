@@ -1,4 +1,8 @@
-@()
+
+@import views.html.helper.CSRF.formField
+@import play.filters.csrf.CSRF
+@import play.mvc.Http.Request
+
 
 @main("Welcome to Play") {
   <div class="h-screen bg-black">
@@ -9,12 +13,13 @@
     </div>
 
 
-    <form action="" method="post">
-    <div class="flex justify-center items-center bg-black p-2 mt-10">
-      <div class="relative bg-inherit">
-        <input type="text" id="username" name="username" class="peer bg-transparent h-10 w-96 rounded-lg text-gray-200 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600" placeholder="Type inside me"/>
-        <label for="note" class="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm transition-all">Type inside me</label>
-        <button type="submit"
+    <form action="/CreateTodo" method="post">
+      <input type="hidden" name="${CSRF.getToken.name}" value="${CSRF.getToken.value}">
+      <div class="flex justify-center items-center bg-black p-2 mt-10">
+        <div class="relative bg-inherit">
+          <input type="text" id="content" name="content" class="peer bg-transparent h-10 w-96 rounded-lg text-gray-200 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600" placeholder="Type inside me" required>
+          <label for="content" class="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm transition-all">Type inside me</label>
+          <button type="submit"
         class="bg-gray-800 text-white h-11 rounded-md px-8 py-2 ml-2 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
           Add Note
         </button>

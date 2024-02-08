@@ -7,3 +7,22 @@ GET     /                           controllers.HomeController.index()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# routes for the To-do controller
+
+# Routes for TodoController
+
+# Create a new todo item (POST request)
+POST    /CreateTodo                  controllers.TodoController.createTodo()
+
+## Get a todo item by ID (GET request)
+#GET     /todos/:id              controllers.TodoController.getTodoById(id: Long)
+#
+## Update a todo item by ID (PUT request)
+#PUT     /todos/:id              controllers.TodoController.updateTodo(id: Long)
+#
+## Delete a todo item by ID (DELETE request)
+#DELETE  /todos/:id              controllers.TodoController.deleteTodo(id: Long)
+#
+## Get all todo items (GET request)
+#GET     /todos
