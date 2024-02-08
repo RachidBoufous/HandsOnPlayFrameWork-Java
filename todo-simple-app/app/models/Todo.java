@@ -20,5 +20,40 @@ public class Todo extends Model {
         done = false;
     }
 
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long Id) {
+        this.Id = Id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public boolean getDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+
+
+    // toString function
+    public String toString() {
+        return "Todo{" +
+                "id=" + Id +
+                ", content='" + content + '\'' +
+                ", done=" + done +
+                '}';
+    }
+
+
 }
 

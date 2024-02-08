@@ -13,7 +13,11 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 # Routes for TodoController
 
 # Create a new todo item (POST request)
-POST    /CreateTodo                  controllers.TodoController.createTodo()
++nocsrf
+POST    /CreateTodo                  controllers.TodoController.createTodo(request: Request)
+
++nocsrf
+GET     /TodoList                    controllers.TodoController.getTodoList()
 
 ## Get a todo item by ID (GET request)
 #GET     /todos/:id              controllers.TodoController.getTodoById(id: Long)
