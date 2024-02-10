@@ -15,12 +15,14 @@
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
-            fetch("//TodoList")
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data);
-                    })
-                    .catch(error => console.error(error));
+                todoList = []
+                fetch("/TodoList")
+                        .then(response => response.json())
+                        .then(data => {
+                            todoList = data
+
+                        })
+                        .catch(error => console.error(error));
         </script>
     </head>
     <body>
