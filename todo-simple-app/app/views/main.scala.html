@@ -20,9 +20,30 @@
                         .then(response => response.json())
                         .then(data => {
                             todoList = data
-
+                            populateTodoList(todoList)
                         })
                         .catch(error => console.error(error));
+
+                function populateTodoList(todoList) {
+                    const todoContainer = document.querySelector(".todos")
+                    // Clear existing list items
+                    todoContainer.innerHTML = '';
+
+                    // Loop through the todoList and create list items
+                    todoList.forEach(todo => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+
+                        <label class="flex justify-between border bg-black text-white rounded-md px-3 py-2 my-3 cursor-pointer">
+                            ${todo.content}
+                            <button type="button" class="focus:outline-black rounded-lg text-white text-sm py-2.5 px-4 bg-gray-800 hover:bg-green-400 hover:text-black">Done ✅</button>
+                        </label>
+
+                `;
+                        // Append the created list item to the container
+                        todoContainer.appendChild(listItem);
+                    });
+                }
         </script>
     </head>
     <body>
